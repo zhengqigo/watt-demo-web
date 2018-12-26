@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: watt-demo-web
+dubbo:
+  application:
+    name: watt-demo-web
+    qos-port: 33333
+  protocol:
+    name: dubbo
+    serialization: hessian2
+  registry:
+    protocol: zookeeper
+    address: 127.0.0.1:2181
+    file: /tmp/${spring.application.name}.cache
+swagger2:
+  enabled: true
+  docket:
+    default:
+      title: ${spring.application.name}
+      description: powered by watt-starter-swagger2
+      base-package: cn.fuelteam
+      base-path: /**
+      excludes: /error
+      contact:
+        email: zhengqiji@xxx.com
+        name: zhengqiji
+      globalOperationParameters:
+        0:
+          name: XAuthorization
+          description: field of authorization code
+          modelRef: string
+          parameterType: header
+          required: true

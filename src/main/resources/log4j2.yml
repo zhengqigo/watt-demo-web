@@ -1,0 +1,72 @@
+Configuration:
+  status: warn
+  Properties:
+    Property:
+    - name: APP
+      value: watt-demo-web
+    - name: ROOT
+      value: /logs
+    - name: GZED
+      value: /logs/gzed
+    - name: FORMATTER
+      value: '%d{yyyy-MM-dd HH:mm:ss.SSS} [%5p] [${hostName}] [%t] %-5level %logger{1.}:%L - [${APP}] %m%n%ex'
+    - name: HIGHLIGHT
+      value: '%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%5p] [${hostName}] [%t] %-5level %logger{1.}:%L - [${APP}] %m%n%ex}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=black, DEBUG=green bold, TRACE=blue}'
+  Appenders:
+    Console:
+      name: console
+      target: SYSTEM_OUT
+      PatternLayout:
+        pattern: ${HIGHLIGHT}
+    RollingFile:
+    - name: file
+      append: true
+      fileName: ${ROOT}/${APP}.log
+      filePattern: ${GZED}/${APP}.%d{yyyy-MM-dd}.gz
+      PatternLayout:
+        pattern: ${FORMATTER}
+      Policies:
+        TimeBasedTriggeringPolicy:
+          interval: 1
+          modulate: true
+        SizeBasedTriggeringPolicy:
+          size: 100 MB
+        CronTriggeringPolicy:
+          schedule: "0 0 0 * * ?"
+      DefaultRollOverStrategy:
+        max: 7
+        Delete:
+          basePath: ${GZED}
+          maxDepth: 1
+          IfFileName:
+            glob: "${APP}.%d{yyyy-MM-dd}.gz"
+          IfLastModified:
+            age: 5d
+  Loggers:
+    Root:
+      level: info
+      AppenderRef:
+      - ref: console
+      - ref: file
+    Logger:
+    - name: org.springframework
+      level: warn
+    - name: org.springframework.boot.context.embedded.undertow
+      level: info
+    - name: org.apache.zookeeper
+      level: fatal
+    - name: org.apache.curator
+      level: fatal
+    - name: org.hibernate
+      level: warn
+    - name: org.xnio
+      level: fatal
+    - name: io.undertow
+      level: debug
+    - name: io.undertow.websockets
+      level: fatal
+    - name: io.undertow.session
+      level: fatal
+      AppenderRef:
+      - ref: console
+      - ref: file
