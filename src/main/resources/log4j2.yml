@@ -67,6 +67,10 @@ Configuration:
       level: fatal
     - name: io.undertow.session
       level: fatal
+    - name: springfox
+      level: fatal
+    - name: com.alibaba
+      level: INFO      
       AppenderRef:
       - ref: console
       - ref: file

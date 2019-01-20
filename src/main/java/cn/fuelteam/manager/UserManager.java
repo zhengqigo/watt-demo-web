@@ -11,7 +11,7 @@ import cn.fuelteam.user.dto.UserDto;
 @Component
 public class UserManager {
 
-    @Reference(version = "1.0.0", check = false, retries = 0, timeout = 3000)
+    @Reference(version = "1.0.0", retries = 0, timeout = 3000)
     private UserClient userClient;
 
     public UserDto get(Long id) {

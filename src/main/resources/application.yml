@@ -1,17 +1,28 @@
+server:
+  port: 8082
 spring:
   application:
     name: watt-demo-web
 dubbo:
   application:
     name: watt-demo-web
+    qos-enable: false
     qos-port: 33333
+    qos-accept-foreign-ip: false
   protocol:
     name: dubbo
     serialization: hessian2
   registry:
-    protocol: zookeeper
-    address: 127.0.0.1:2181
-    file: /tmp/${spring.application.name}.cache
+    address: nacos://172.16.31.40:8848
+    file: /tmp/watt-demo-web.cache
+  consumer:
+    check: false
+# nacos配置中心
+nacos:
+  config:
+    server-addr: 127.0.0.1:8848
+    # 命名空间的id
+    namespace: 428bdc58-13da-4b0c-97bb-c37e9d91a07f
 swagger2:
   enabled: true
   docket:

@@ -11,7 +11,7 @@ import cn.fuelteam.data.dto.OperationDto;
 @Component
 public class OperationManager {
 
-    @Reference(version = "1.0.0", check = false, retries = 0, timeout = 3000)
+    @Reference(version = "1.0.0", retries = 0, timeout = 3000)
     private OperationClient operationClient;
 
     public OperationDto get(Long id) {
