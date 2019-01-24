@@ -17,13 +17,8 @@ public class DubboController {
         return "hello " + name;
     }
 
-    @NacosConfigListener(dataId = "demowebconfig1", groupId = "demowebgroup", timeout = 500)
+    @NacosConfigListener(dataId = "DEMO_WEB", groupId = "DEV_GROUP", timeout = 500)
     public void onChange(String newContent) throws Exception {
-        System.out.println("onChange : " + newContent);
-    }
-
-    @NacosConfigListener(dataId = "demowebconfig2", groupId = "demowebgroup", timeout = 500)
-    public void onChange2(String newContent) throws Exception {
         System.out.println("onChange : " + newContent);
     }
 }
