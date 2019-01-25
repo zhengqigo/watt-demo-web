@@ -70,7 +70,7 @@ Configuration:
     - name: springfox
       level: fatal
     - name: com.alibaba
-      level: INFO      
+      level: debug      
       AppenderRef:
       - ref: console
       - ref: file

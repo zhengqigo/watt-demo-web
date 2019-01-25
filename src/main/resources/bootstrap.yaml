@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: watt-demo-web
+  cloud:
+    nacos:
+      config:
+        file-extension: yaml
+        server-addr: 127.0.0.1:8848
+  profiles:
+    active: dev
