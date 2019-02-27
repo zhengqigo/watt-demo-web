@@ -62,7 +62,7 @@ Configuration:
     - name: org.xnio
       level: fatal
     - name: io.undertow
-      level: debug
+      level: fatal
     - name: io.undertow.websockets
       level: fatal
     - name: io.undertow.session

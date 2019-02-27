@@ -17,10 +17,9 @@
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <spring-boot.version>2.0.8.RELEASE</spring-boot.version>
-        <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
-        <dubbo-registry-nacos.version>0.0.2</dubbo-registry-nacos.version>
-        <nacos-client.version>0.6.2</nacos-client.version>
+        <spring-boot.version>2.1.2.RELEASE</spring-boot.version>
+        <dubbo-registry-nacos.version>0.0.3</dubbo-registry-nacos.version>
+        <nacos-client.version>0.8.0</nacos-client.version>
         <dubbo.version>2.7.0</dubbo.version>
 
         <disruptor.version>3.4.2</disruptor.version>
@@ -75,7 +74,7 @@
         <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>${dubbo.version}</version>
         </dependency>
         
         <dependency>

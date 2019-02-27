@@ -1,9 +1,8 @@
 package cn.fuelteam.manager;
 
+import org.apache.dubbo.config.annotation.Reference;
 import org.fuelteam.watt.result.Result;
 import org.springframework.stereotype.Component;
-
-import com.alibaba.dubbo.config.annotation.Reference;
 
 import cn.fuelteam.data.client.OperationClient;
 import cn.fuelteam.data.dto.OperationDto;
