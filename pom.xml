@@ -78,11 +78,6 @@
         </dependency>
         
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>dubbo-registry-nacos</artifactId>
-            <version>${dubbo-registry-nacos.version}</version>
-        </dependency>
-        <dependency>
             <groupId>com.alibaba.nacos</groupId>
             <artifactId>nacos-client</artifactId>
             <version>${nacos-client.version}</version>
