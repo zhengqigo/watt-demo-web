@@ -18,7 +18,8 @@
 
         <spring-boot.version>2.1.3.RELEASE</spring-boot.version>
         <nacos-client.version>0.9.0</nacos-client.version>
-        <dubbo.version>2.7.0</dubbo.version>
+        <dubbo.version>2.7.1</dubbo.version>
+        <dubbo-starter.version>2.7.0</dubbo-starter.version>
 
         <disruptor.version>3.4.2</disruptor.version>
 
@@ -72,7 +73,7 @@
         <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
-            <version>${dubbo.version}</version>
+            <version>${dubbo-starter.version}</version>
         </dependency>
 
         <dependency>
