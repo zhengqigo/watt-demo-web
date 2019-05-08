@@ -50,7 +50,7 @@ Configuration:
       - ref: file
     Logger:
     - name: org.springframework
-      level: warn
+      level: info
     - name: org.springframework.boot.context.embedded.undertow
       level: info
     - name: org.apache.zookeeper
