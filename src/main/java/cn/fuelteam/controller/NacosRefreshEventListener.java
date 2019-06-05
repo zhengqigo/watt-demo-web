@@ -16,7 +16,7 @@ import org.springframework.core.env.Environment;
 @Configuration
 public class NacosRefreshEventListener {
 
-    private Logger logger = LoggerFactory.getLogger(NacosRefreshEventListener.class);
+    private static final Logger logger = LoggerFactory.getLogger(NacosRefreshEventListener.class);
 
     @Autowired
     private Environment environment;
